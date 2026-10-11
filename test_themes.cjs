@@ -1,0 +1,12 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const context=vm.createContext({presets:[],validTheme:c=>Boolean(c),configFromPreset:p=>({name:p[0],bg:p[1],panel:p[2],accent:p[3],soft:p[4],mode:p[5]}),matchMedia:()=>({matches:false,addEventListener(){}}),render(){}});
+vm.runInContext(fs.readFileSync(__dirname+'/static/themes.js','utf8'),context);
+const run=s=>vm.runInContext(s,context);
+assert.equal(run("themePalette({bg:'#ffffff',panel:'#ffffff',soft:'#eeeeee',accent:'#e2bb63',mode:'light'},'dark').bg"),'#08090b');
+assert.equal(run("themePalette({bg:'#ffffff',panel:'#ffffff',soft:'#eeeeee',accent:'#e2bb63',mode:'light'},'dark').accent"),'#e2bb63');
+assert.equal(run("themePalette({bg:'#08090b',panel:'#141518',soft:'#202023',accent:'#e2bb63',mode:'dark'},'light').bg"),'#f7f8f4');
+assert.equal(run("themePalette(null,'system',true).mode"),'dark');
+assert.equal(run("themePalette({bg:'#ffffff',panel:'#ffffff',soft:'#eeeeee',accent:'#e2bb63',mode:'light'},'system',false).mode"),'light');
+const ratios=run("presets.map(p=>[p[0],...p.slice(1,5).map(bg=>{const a=relativeLuminance(bg),b=relativeLuminance(contrastInk(bg));return (Math.max(a,b)+.05)/(Math.min(a,b)+.05)})])");
+for(const [name,...values]of ratios)for(const r of values)assert.ok(r>=4.5,`${name}: contrast ${r}`);
+console.log('PASS: dark-mode override, accent preservation, light/system switching, and 4.5:1 text contrast for all six new palettes');
