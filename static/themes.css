@@ -1,0 +1,23 @@
+body.dark .brand,body.dark .breadcrumb b{color:var(--ink)}
+body.dark .navitem{color:var(--muted)}
+body.dark .navitem.active{background:var(--panel);color:var(--sage);box-shadow:inset 3px 0 var(--sage)}
+body.dark .avatar{background:var(--panel);border-color:var(--line);color:var(--sage)}
+body.dark .profile,body.dark aside{border-color:var(--line)}
+body.dark .resource,body.dark .task-select,body.dark .timer-tabs button.selected,body.dark .play{background:var(--panel);color:var(--card-ink);border-color:var(--line)}
+body.dark .timer-tabs{background:var(--bg)}
+body.dark .timer-tabs button,body.dark .timer-caption,body.dark .timer-foot{color:var(--muted)}
+body.dark .timer-tabs button.selected{color:var(--sage)}
+body.dark .tag,body.dark .subject,body.dark .day small{background:var(--soft);color:var(--soft-ink)}
+body.dark .flame-count,body.dark .streak-pill{background:var(--soft);border-color:var(--line);color:var(--sage)}
+body.dark .task-row,body.dark .agenda-item{border-color:var(--line)}
+body.dark .sound-art{background:var(--bg);color:var(--sage)}
+body.dark .form-field input,body.dark .form-field select,body.dark .form-field textarea{background:var(--bg);color:var(--ink);border-color:var(--line)}
+body.dark .eyebrow,body.dark .folder-icon,body.dark .text-button{color:var(--sage)}
+body.dark .profile-hero{background:var(--panel)!important;color:var(--card-ink)}
+body.dark .week i{background:var(--soft)}body.dark .week .today i{background:var(--sage)}
+.focus-card,body.dark .focus-card{border-color:var(--line);background:var(--panel)}
+.timer-ring{box-shadow:0 0 0 10px var(--bg)}
+.sound-card{border-color:var(--line)}
+.btn.active,.growth-nav .btn.active{color:var(--sage);border-color:var(--sage)}
+.primary{box-shadow:none}.quote-text{color:var(--card-ink,var(--ink))}
+.preset[aria-pressed=true]{border-color:var(--sage);background:var(--soft);color:var(--sage);box-shadow:inset 0 0 0 1px var(--sage)}
