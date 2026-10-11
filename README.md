@@ -1,5 +1,8 @@
 # Stillroom
 
+**Account update:** the browser edition now includes Supabase email sign-up/sign-in, confirmation and password-recovery flows, an optional Google sign-in button enabled only when the provider is configured, and version-protected account workspace saving. Run `supabase-setup.sql` and complete [SUPABASE-SETUP.md](SUPABASE-SETUP.md) before expecting cloud sync. Real authenticated sign-in and database isolation testing are pending project setup. Uploaded files/audio and timers stay device-local; guest progress is imported only by explicit choice. The local Python backend remains single-user and must not be exposed publicly.
+
+
 A cozy, single-user study workspace. Run locally with Python 3.11+:
 
 ```powershell
@@ -42,7 +45,7 @@ Run `node test_growth.cjs` to check progression eligibility, duplicate filtering
 
 Google Calendar and Gmail are explicitly disconnected. A production connection needs registered Google OAuth credentials, redirect URLs, consent, token encryption, and per-user authorization. No Gmail is read or sent. Website blocking requires an installed browser extension or native companion; this app does not currently block websites or apps.
 
-The backend is intentionally local and single-user. Do not expose it publicly: authentication, per-user storage, CSRF/origin validation, request limits, database migrations and a production secrets system are required first. Browser cache is unencrypted. The last browser to save wins; cross-device synchronization is not implemented. Use one tab to avoid concurrent timer duplication. Timer recovery uses the device clock and local timezone. Changes to clock/timezone can affect results.
+The backend is intentionally local and single-user. Do not expose it publicly: authentication, per-user storage, CSRF/origin validation, request limits, database migrations and a production secrets system are required first. Browser cache is unencrypted. The last browser to save wins; cross-device study-record synchronization is available through the optional configured Supabase integration; uploaded files/audio do not sync. Use one tab to avoid concurrent timer duplication. Timer recovery uses the device clock and local timezone. Changes to clock/timezone can affect results.
 
 ## Architecture
 

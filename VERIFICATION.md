@@ -21,3 +21,10 @@ Refinement checks: typed custom focus goal and subject are retained in the runni
 Google integrations, real device blocking, and the advanced features listed in README.md remain unavailable.
 
 Dark-theme fix: browser computed styles confirm black/gold background `#08090b`, cards `#141518`, gold `#e2bb63`; switching to light and back updates the surfaces. Ember Orange applies its orange accent and black background. Black/gold survives refresh. `node test_themes.cjs` passes mode precedence, accent preservation, system-mode selection and minimum 4.5:1 foreground contrast for the six new palettes. This contrast check covers palette foreground/background pairs, not a complete accessibility audit.
+
+
+## Supabase account update
+- JavaScript syntax and test_cloud.cjs passed: per-user cache keys, excluded device-only fields, version checks, conflict pause, offline dirty retention, concurrent-tab baseline protection, and edits during a request.
+- Existing growth/theme suites passed. Local browser shows the account dialog and disabled Google setup-pending button without console errors.
+- Public Supabase settings confirmed email registration enabled, email confirmation required, Google disabled. Anonymous workspace lookup returned missing-table before setup, not data.
+- Database SQL installation, real confirmation email delivery, password recovery, successful Google login and authenticated cross-device/RLS checks remain pending user setup. No secret key is used or stored in the package.
