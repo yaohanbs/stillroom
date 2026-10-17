@@ -1,0 +1,25 @@
+Stillroom Chinese idiom collection
+
+Source: CC-CEDICT, community-maintained Chinese-English dictionary.
+Published by MDBG: https://www.mdbg.net/chinese/dictionary?page=cc-cedict
+Contributors and corrections: https://cc-cedict.org/editor/editor.php
+Referenced work: CEDICT, Copyright (C) 1997, 1998 Paul Andrew Denisowski.
+
+Dictionary data is licensed under Creative Commons Attribution-ShareAlike 4.0 International:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+This extracted data collection is distributed under the same CC BY-SA 4.0 license.
+Changes: retain all entries whose English definition contains '(idiom)'; convert
+traditional/simplified forms, tone-number pinyin and definitions to JSON; replace
+definition separators '/' with '; '; add Stillroom entry identifiers. No English
+definitions were machine-generated. Some entries are longer sayings, variants,
+or multiple pronunciations. This is not an exhaustive Chengyu dictionary.
+
+Downloaded on 17 October 2026. Extracted entries: 5,694.
+The original download's license header is retained below:
+
+CC-CEDICT
+Community maintained free Chinese-English dictionary.
+Published by MDBG
+Creative Commons Attribution-ShareAlike 4.0 International License
+https://creativecommons.org/licenses/by-sa/4.0/
